@@ -1,29 +1,29 @@
 //C library statement
 #include <stdlib.h>
+#include <stdio.h>
 
 //Driver program
 int main(void)
 {    
 	char path[1024];
-	char filename[50];
-	char keyword[50];
-	char terminal[]="cd ";
+	char keyword[1024];
+	char terminal[]="grep ";
+	
 	printf("enter file path: ");
 	scanf("%s", path);
-	strcat(terminal,path);
-	system(terminal);
-	printf("enter filename: ");
-	scanf("%s", filename);
 	printf("enter search keyword: ");
 	scanf("%s", keyword);
-	char search[]="grep ";
-	printf(search);
-	strcat(search,keyword);
-	strcat(search,filename);
-	printf("here\n");
-	printf(search);
-	printf("\nhere\n");
-	system(search);
+	
+	strcat(keyword," ");
+	printf("this is keyword: %s", keyword);
+	printf("\n");
+	strcat(keyword,path);
+	printf("this is keyword: %s", keyword);
+	printf("\n");
+	strcat(terminal,keyword);
+	printf("this is terminal: %s", terminal);
+	printf("\n");
+	system(terminal);
 }
 
 
