@@ -31,7 +31,40 @@ void updatedb();
 
 void main()
 {
-	printf("Welcome to ");
+	bool exit = false;
+	while(!exit)
+	{
+		int input;
+		printf("Welcome to this basic forensics tool\n");
+		printf("To find the inode number of a file press 1\n");
+		printf("To find the file belonging to a certain inode number press 2\n");
+		printf("To make a packet capture from network device press 3\n");
+		printf("To search for a keyword in a disk image press 4\n");
+		printf("To exit press 5\n");
+		scanf("%d", input);
+		switch(input)
+		{
+			case 1:
+				option1();
+				break;
+			case 2:
+				option2();
+				break;
+			case 3:
+				option5();
+				break;
+			case 4:
+				option6();
+				break;
+			case 5:
+				exit = true;
+				break;
+			default:
+				printf("Invalid choice!");
+				break;
+		}
+	}
+
 }
 
 
